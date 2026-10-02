@@ -1,0 +1,21 @@
+# .github/workflows/ci.yml
+# El "robot" de Integración Continua. GitHub lo corre solo en cada push y cada Pull Request.
+# Si las pruebas se ponen rojas, el check falla y se ve en el PR.
+name: CI
+
+# CUÁNDO corre: en cada push y en cada pull request.
+on:
+  push:
+  pull_request:
+
+# QUÉ hace: un trabajo llamado "test".
+jobs:
+  test:
+    runs-on: ubuntu-latest   # una máquina Linux limpia, en la nube de GitHub
+    steps:
+      - uses: actions/checkout@v4          # 1. baja tu código al runner
+      - uses: actions/setup-node@v4        # 2. instala Node
+        with:
+          node-version: 20
+      - run: npm ci                        # 3. instala las dependencias (limpio y reproducible)
+      - run: npm test                      # 4. corre tus pruebas (node --test)

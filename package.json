@@ -1,0 +1,19 @@
+{
+  "name": "starter-ci-reserva-labs",
+  "version": "1.0.0",
+  "description": "Reserva de labs con pruebas unitarias (node:test) + integración (supertest) + CI con GitHub Actions. Clase 18 · Programación Web · URL.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "supertest": "^7.0.0"
+  }
+}
