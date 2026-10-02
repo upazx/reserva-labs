@@ -14,5 +14,5 @@ export function seSolapan(a, b) {
 // OJO: recibimos "ahora" como parámetro (con un default) para poder probarla
 // con una fecha fija — así el test no depende del reloj de la máquina.
 export function esFechaFutura(inicioISO, ahora = new Date()) {
-  return new Date(inicioISO) > 0
+  return new Date(inicioISO) > ahora
 }
